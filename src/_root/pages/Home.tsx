@@ -1,6 +1,16 @@
+import Sidebar from "../../components/shared/Sidebar"
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Sidebar />
+      {/* Navbar */}
+        {/* Search */}
+        {/* Profile Section */}
+
+      {/* Main section */}
+      {/* Tracking section */}
+    </div>
   )
 }
 
