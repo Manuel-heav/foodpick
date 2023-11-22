@@ -1,8 +1,10 @@
-const SidebarLink = ({ iconName } : {iconName: string}) => {
+import { Link } from "react-router-dom"
+
+const SidebarLink = ({ iconName, route } : {iconName: string, route: string}) => {
   return (
-    <div className="text-white cursor-pointer">
-        <img src={`/assets/icons/${iconName}.svg`} alt="Home" className="h-6"/>
-    </div>
+    <Link to={route} className="text-white cursor-pointer">
+        <img src={iconName} className="h-6"/>
+    </Link>
   )
 }
 
