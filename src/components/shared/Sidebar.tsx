@@ -12,8 +12,8 @@ const Sidebar = () => {
                 SidebarLinks.map(link => {
                     const isActive = pathname === link.route;
                     return(
-                        <Link key={link.label} to={link.route} className={`p-1.5 rounded-full text-white cursor-pointer group ${isActive && 'bg-mainColor'}`}>
-                            <img src={link.imgUrl} className="h-6 hover:bg-mainColor"/>
+                        <Link key={link.label} to={link.route} className={`p-1.5 hover:bg-mainColor rounded-full text-white cursor-pointer ${isActive && 'bg-mainColor'}`}>
+                            <img src={link.imgUrl} className="h-6"/>
                         </Link>
                     )
                 })
