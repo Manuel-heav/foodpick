@@ -15,7 +15,7 @@ import Tags from './Tags.vue'
             <div class="flex flex-col gap-8 mt-5 max-w-3xl items-center">
                 <Stepper class="w-full flex items-center justify-center"/>
                 <Tags />
-            </div>
+            </div>  
 </section>
 
 </template>
