@@ -1,50 +1,62 @@
 <script setup>
     const myList = [{
         id: 1,
-        title: "Certain Thing"
+        title: "Low Budget"
     },{
         id: 2,
-        title: "Certain Thing"
+        title: "Fasting"
     },{
         id: 3,
-        title: "Certain Thing"
+        title: "Explore Mood"
     },{
         id: 4,
-        title: "Certain Thing"
+        title: "Meh Mood"
     },{
         id: 5,
-        title: "Certain Thing"
+        title: "High Budget"
     },{
         id: 6,
-        title: "Certain Thing"
+        title: "Inside Campus"
     },
     {
         id: 7,
-        title: "Certain Thing"
+        title: "Outside Campus"
     },
     {
         id: 8,
-        title: "Certain Thing"
+        title: "Breakfast"
     },
     {
         id: 9,
-        title: "Certain Thing"
+        title: "Lunch"
     },
     {
         id: 10,
-        title: "Certain Thing"
+        title: "Dinner"
     },
     {
         id: 11,
-        title: "Certain Thing"
+        title: "Non Fasting"
+    },
+    {
+        id: 12,
+        title: "Injera Related"
+    },
+    {
+        id: 13,
+        title: "Bread Related"
+    },
+    {
+        id: 14,
+        title: "High Portion"
     },
     ]
 </script>
 
 <template>
-    <div v-for="list in myList" :key="list.id">
-        <div>
-            {{ list.title }}
+    <div class="flex flex-row flex-wrap justify-center">
+    <div v-for="list in myList" :key="list.id" class="flex gap-3">
+            <h2 class="mb-2 mr-2 cursor-pointer text-black text-xs bg-[#fff] rounded-full p-2 h-fit w-fit">{{ list.title }}</h2>
         </div>
     </div>
 </template>

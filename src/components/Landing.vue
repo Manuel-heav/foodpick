@@ -12,9 +12,9 @@ import Tags from './Tags.vue'
             <div class="text-sm sm:text-md text-center max-w-3xl">
                 Hey there! Are you another AASTU student like me, constantly battling the eternal struggle of deciding where and what to eat for every meal? I feel you! It's like a daily food dilemma, am I right? But hey, worry not, we've got your back! With Food Pick, we decide for you like your mom!
             </div>
-            <div class="flex">
-                <Stepper class="flex-2"/>
-                <Tags class="flex-1"/>
+            <div class="flex flex-col gap-8 mt-5 max-w-3xl items-center">
+                <Stepper class="w-full flex items-center justify-center"/>
+                <Tags />
             </div>
 </section>
 
