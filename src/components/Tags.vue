@@ -56,7 +56,8 @@
 <template>
     <div class="flex flex-row flex-wrap justify-center">
     <div v-for="list in myList" :key="list.id" class="flex gap-3">
-            <h2 class="mb-2 mr-2 cursor-pointer text-black text-xs bg-[#fff] rounded-full p-2 h-fit w-fit">{{ list.title }}</h2>
+            <h2 class="mb-2 mr-2 cursor-pointer text-black text-xs bg-[#fff] rounded-full p-2 h-fit w-fit
+            shadow-none transition-shadow duration-300 hover:shadow-lg hover:shadow-[#9A348E]">{{ list.title }}</h2>
         </div>
     </div>
 </template>
