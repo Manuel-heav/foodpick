@@ -1,4 +1,6 @@
 <script setup>
+    import { ref } from 'vue';
+
     const myList = [{
         id: 1,
         title: "Low Budget"
@@ -51,12 +53,20 @@
         title: "High Portion"
     },
     ]
+
+    let colorState = ref(true)
+    let bgColor = colorState.value ? "bg-[#fff]" : "bg-[#9A348E]";
+
+    const changeBg = () => {
+        colorState.value = !colorState.value
+        bgColor = colorState.value ? "bg-[#fff]" : "bg-[#9A348E]";
+    }
 </script>
 
 <template>
     <div class="flex flex-row flex-wrap justify-center">
     <div v-for="list in myList" :key="list.id" class="flex gap-3">
-            <h2 class="mb-2 mr-2 cursor-pointer text-black text-xs bg-[#fff] rounded-full p-2 h-fit w-fit
+            <h2 @click="changeBg" :class="colorState && bgColor" class="mb-2 mr-2 cursor-pointer text-black text-xs rounded-full p-2 h-fit w-fit
             shadow-none transition-shadow duration-300 hover:shadow-lg hover:shadow-[#9A348E]">{{ list.title }}</h2>
         </div>
     </div>
