@@ -1,5 +1,9 @@
 <script setup>
     import { ref } from 'vue';
+    import People from './People.vue'
+    import Stepper from './Stepper.vue'
+
+    let showNextPage = ref(true);
 
     const myList = [{
         id: 1,
@@ -82,26 +86,35 @@
     },
     ]
 
-
+    // Change the state of the value in myList array
     const choose = (item) => {
         item.colorState.value = !item.colorState.value;
         item.chosen.value = !item.chosen.value;
 
     }
+
+    // Adds a dynamic background tailwind class to the tags
     const computedBgColor = (item) => {
         return item.colorState.value ? 'bg-[#fff] text-black hover:shadow-[#a44899]' : 'bg-[#9A348E] text-white';
     }
 
-    console.log(myList.filter((data) => data.chosen.value == true))
-
+    // I will figure out a way how to use this data
+    const saveData = () => {
+        const theData = myList.filter((item) => {
+            return item.chosen.value
+        })
+        showNextPage.value = false;
+    }
 </script>
 
 <template>
-    <div class="flex flex-row flex-wrap justify-center">
-    <div v-for="list in myList" :key="list.id" class="flex gap-3">
-            <h2 @click="choose(list)" :class="computedBgColor(list)" class="mb-2 mr-2 cursor-pointer text-xs rounded-full p-2 h-fit w-fit
-            shadow-none transition-shadow duration-300 hover:shadow-lg">{{ list.title }}</h2>
+    <div  v-if="showNextPage" class="flex flex-row flex-wrap justify-center">
+        <Stepper class="w-full sm:ml-20 mb-10"/>
+        <div v-for="list in myList" :key="list.id" class="flex gap-3">
+                <h2 @click="choose(list)" :class="computedBgColor(list)" class="mb-2 mr-2 cursor-pointer text-xs rounded-full p-2 h-fit w-fit
+                shadow-none transition-shadow duration-300 hover:shadow-lg">{{ list.title }}</h2>
+            </div>
         </div>
-    </div>
-    <button @click="sendArrayToParent" class="transform bg-[#a44899] pt-2 pb-2 pr-7 pl-7 rounded-full hover:bg-[#9A348E] transition duration-500 hover:scale-110">Next</button>
+        <button v-if="showNextPage" @click="saveData" class="transform bg-[#a44899] pt-2 pb-2 pr-7 pl-7 rounded-full hover:bg-[#9A348E] transition duration-500 hover:scale-110">Next</button>
+    <People v-else />
 </template>
