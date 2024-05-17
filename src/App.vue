@@ -4,9 +4,7 @@ import Landing from './components/Landing.vue';
 </script>
 
 <template>
-  <header>
       <Landing />
-  </header>
 </template>
 
 <style scoped>

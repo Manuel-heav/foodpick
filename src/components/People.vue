@@ -3,7 +3,7 @@ import Stepper from './Stepper.vue'
 </script>
 
 <template>
-        <Stepper class="w-full sm:ml-20"/>
+        <Stepper class="w-full"/>
             <h1 class="text-2xl mt-1">🍔 Let's Feast! 🌮</h1>
             <p class="mb-2 text-sm text-gray-200">How many hungry souls are raiding the spots today?</p>
         <form class="max-w-sm mx-auto">

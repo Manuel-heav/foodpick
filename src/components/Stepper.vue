@@ -1,4 +1,4 @@
-<script setup>
+<script>
 
 </script>
 
@@ -10,7 +10,7 @@
           <span>1</span>
         </span>
         <span class="ms-2 text-sm font-medium text-gray-80">
-          Choose Tags
+          Tags
         </span>
       </span>
       <div class="w-full h-px flex-1 bg-gray-200 group-last:hidden"></div>
@@ -22,7 +22,7 @@
           <span>2</span>
         </span>
         <span class="ms-2 text-sm font-medium text-white dark:text-neutral-200">
-          Amount Of People
+          Number
         </span>
       </span>
       <div class="w-full h-px flex-1 bg-gray-200 group-last:hidden"></div>
@@ -34,10 +34,10 @@
           <span>3</span>
         </span>
         <span class="ms-2 text-sm font-medium text-white dark:text-neutral-200">
-          Final Result
+          Result
         </span>
       </span>
       <div class="w-full h-px flex-1 bg-gray-200 group-last:hidden"></div>
     </li>
   </ul>
-</template>
+</template> 
