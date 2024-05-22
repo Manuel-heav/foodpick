@@ -1,5 +1,5 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref, watch } from 'vue';
     import People from './People.vue'
     import Stepper from './Stepper.vue'
 
@@ -100,10 +100,11 @@
     }
 
     const saveData = () => {
-        selectedData.value = myList.filter(item => item.chosen.value);
+        const myVal = myList.filter(item => item.chosen.value)
+        selectedData.value = myVal;
         showNextPage.value = true;
     }
-    console.log(selectedData.value)
+
 </script>
 
 <template>
@@ -115,5 +116,5 @@
             </div>
         </div>
         <button v-if="!showNextPage" @click="saveData" class="transform bg-[#a44899] pt-2 pb-2 pr-7 pl-7 rounded-full hover:bg-[#9A348E] transition duration-500 hover:scale-110">Next</button>
-    <People v-else :data="selectedData.value"/>
+    <People v-else :data="selectedData"/>
 </template>

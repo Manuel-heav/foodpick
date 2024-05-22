@@ -1,20 +1,24 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, toRefs } from 'vue'
 import Stepper from './Stepper.vue'
 import Result from './Result.vue';
-let number = ref(0)
-let showNextPage = ref(false)
-const props = defineProps({
-  data: {
-    type: Array,
-    required: true,
-  }
-});
 
-console.log(props.data)
+let number = ref(1)
+let showNextPage = ref(false)
+
+
+const props = defineProps({
+    data: {
+        type: Array,
+        required: true,
+    }
+});
+const { data } = toRefs(props)
+
 const saveData = () => {
      showNextPage.value = true;
 }
+console.log("Data in People Component:", data.value);
 
 </script>
 
