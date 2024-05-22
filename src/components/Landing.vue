@@ -1,7 +1,5 @@
 <script setup >
-import { ref } from 'vue';
 import Header from './Header.vue';
-import Stepper from './Stepper.vue';
 import Tags from './Tags.vue'
 
 </script>

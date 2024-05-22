@@ -3,7 +3,8 @@
     import People from './People.vue'
     import Stepper from './Stepper.vue'
 
-    let showNextPage = ref(true);
+    let showNextPage = ref(false);
+    let selectedData = ref([]);
 
     const myList = [{
         id: 1,
@@ -98,23 +99,21 @@
         return item.colorState.value ? 'bg-[#fff] text-black hover:shadow-[#a44899]' : 'bg-[#9A348E] text-white';
     }
 
-    // I will figure out a way how to use this data
     const saveData = () => {
-        const theData = myList.filter((item) => {
-            return item.chosen.value
-        })
-        showNextPage.value = false;
+        selectedData.value = myList.filter(item => item.chosen.value);
+        showNextPage.value = true;
     }
+    console.log(selectedData.value)
 </script>
 
 <template>
-    <div  v-if="showNextPage" class="flex flex-row flex-wrap justify-center">
+    <div  v-if="!showNextPage" class="flex flex-row flex-wrap justify-center">
         <Stepper class="w-full sm:ml-20 mb-10"/>
         <div v-for="list in myList" :key="list.id" class="flex gap-3">
                 <h2 @click="choose(list)" :class="computedBgColor(list)" class="mb-2 mr-2 cursor-pointer text-xs rounded-full p-2 h-fit w-fit
                 shadow-none transition-shadow duration-300 hover:shadow-lg">{{ list.title }}</h2>
             </div>
         </div>
-        <button v-if="showNextPage" @click="saveData" class="transform bg-[#a44899] pt-2 pb-2 pr-7 pl-7 rounded-full hover:bg-[#9A348E] transition duration-500 hover:scale-110">Next</button>
-    <People v-else />
+        <button v-if="!showNextPage" @click="saveData" class="transform bg-[#a44899] pt-2 pb-2 pr-7 pl-7 rounded-full hover:bg-[#9A348E] transition duration-500 hover:scale-110">Next</button>
+    <People v-else :data="selectedData.value"/>
 </template>
