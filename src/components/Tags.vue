@@ -100,11 +100,10 @@
     }
 
     const saveData = () => {
-        const myVal = myList.filter(item => item.chosen.value)
+        const myVal = myList.filter(item => item.chosen.value).map(item => item.title)
         selectedData.value = myVal;
         showNextPage.value = true;
     }
-
 </script>
 
 <template>
