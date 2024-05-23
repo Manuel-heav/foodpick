@@ -59,8 +59,8 @@ const filterAndSelectFoods = () => {
   // Log out selected place and foods
   finalPlace.value = selectedPlace.value.place;
   finalFoods.value = selectedFoods.value;
-  console.log("Selected Place:", selectedPlace.value.place);
-  console.log("Selected Foods:", selectedFoods.value);
+  console.log("Selected Place:", finalPlace.value);
+  console.log("Selected Foods:", finalFoods.value);
 };
 
 filterAndSelectFoods(); 
@@ -74,7 +74,7 @@ filterAndSelectFoods();
         </div>
   </div>
 
-  <Card :place="finalPlace.value" :foods="finalFoods.value"/>
+  <Card :place="finalPlace" :foods="finalFoods"/>
 
   <button @click="filterAndSelectFoods" class="transform bg-[#a44899] pt-2 pb-2 pr-7 pl-7 rounded-full hover:bg-[#9A348E] transition duration-500 hover:scale-110">Generate Again!</button>
 </template>
