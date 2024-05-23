@@ -12,8 +12,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@vue/runtime-dom": "^3.4.27",
     "pinia": "^2.1.7",
-    "vue": "^3.4.21",
+    "vue": "^3.4.27",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
@@ -21,6 +22,7 @@
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.12.5",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/tsconfig": "^0.5.1",
     "autoprefixer": "^10.4.19",
