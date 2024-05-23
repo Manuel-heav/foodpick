@@ -20,35 +20,27 @@ const finalFoods = ref([]);
 const selectedFoods = ref([]);
 
 const filterAndSelectFoods = () => {
-  // Filter places based on tags
   const filteredPlaces = foodPlaces.filter(place => 
     place.foods.some(food => 
       props.data.some(tag => food.tags.includes(tag))
     )
   );
 
-  console.log(filteredPlaces)
 
-  // Randomly select one place
   if (filteredPlaces.length > 0) {
     selectedPlace.value = filteredPlaces[Math.floor(Math.random() * filteredPlaces.length)];
     console.log(selectedPlace.value)
-    // Filter foods from the selected place based on tags
     const filteredFoods = selectedPlace.value.foods.filter(food => 
       props.data.some(tag => food.tags.includes(tag))
     );
-
-    console.log(filteredFoods)
-
-    // Select the specified number of foods randomly
     selectedFoods.value = [];
-    const availableFoods = [...filteredFoods]; // Create a copy of filteredFoods to avoid mutating it
+    const availableFoods = [...filteredFoods]; 
     for (let i = 0; i < props.number; i++) {
       if (availableFoods.length > 0) {
         const randomIndex = Math.floor(Math.random() * availableFoods.length);
-        selectedFoods.value.push(availableFoods.splice(randomIndex, 1)[0].food); // Remove the selected food from availableFoods
+        selectedFoods.value.push(availableFoods.splice(randomIndex, 1)[0].food); 
       } else {
-        break; // Break if there are no more foods matching the tags
+        break; 
       }
     }
   } else {
@@ -56,11 +48,8 @@ const filterAndSelectFoods = () => {
     selectedFoods.value = [];
   }
 
-  // Log out selected place and foods
   finalPlace.value = selectedPlace.value.place;
   finalFoods.value = selectedFoods.value;
-  console.log("Selected Place:", finalPlace.value);
-  console.log("Selected Foods:", finalFoods.value);
 };
 
 filterAndSelectFoods(); 
