@@ -69,7 +69,7 @@ filterAndSelectFoods();
 <template>
     <div class="flex flex-row flex-wrap justify-center">
     <div v-for="item in props.data" class="flex gap-3">
-            <h2 class="mb-2 mr-2 cursor-pointer text-xs rounded-full p-2 h-fit w-fit
+            <h2 class="mb-2 mr-2 cursor-pointer text-xs rounded-full pl-2 pr-2 pt-1 pb-1 h-fit w-fit
                 shadow-none transition-shadow duration-300 hover:shadow-lg  hover:shadow-[#a44899] bg-[#9A348E] text-white">{{ item }}</h2>
         </div>
   </div>

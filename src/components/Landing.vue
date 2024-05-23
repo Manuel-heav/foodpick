@@ -1,6 +1,7 @@
 <script setup >
 import Header from './Header.vue';
 import Tags from './Tags.vue'
+import Footer from './Footer.vue'
 
 </script>
 
@@ -16,5 +17,7 @@ import Tags from './Tags.vue'
                 <Tags />
             </div>  
 </section>
+
+<Footer />
 
 </template>
