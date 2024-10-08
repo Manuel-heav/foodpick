@@ -63,7 +63,9 @@ filterAndSelectFoods();
         </div>
   </div>
 
-  <Card :place="finalPlace" :foods="finalFoods"/>
+  <div class="flex flex-col justify-center items-center">
+    <Card :place="finalPlace" :foods="finalFoods"/>
 
-  <button @click="filterAndSelectFoods" class="transform bg-[#a44899] pt-2 pb-2 pr-7 pl-7 rounded-full hover:bg-[#9A348E] transition duration-500 hover:scale-110">Generate Again!</button>
+    <button @click="filterAndSelectFoods" class="transform bg-[#a44899] pt-2 pb-2 pr-8 pl-8 rounded-full hover:bg-[#9A348E] transition duration-500 hover:scale-110">Generate Again!</button>
+</div>
 </template>
